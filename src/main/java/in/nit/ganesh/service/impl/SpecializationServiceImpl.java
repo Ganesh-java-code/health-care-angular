@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import in.nit.ganesh.entity.Specialization;
+import in.nit.ganesh.exception.SpecializationException;
 import in.nit.ganesh.repo.SpecializationRepository;
 import in.nit.ganesh.service.SpecializationService;
 
@@ -21,13 +22,12 @@ public class SpecializationServiceImpl implements SpecializationService {
 	}
 
 	public Specialization getOneSpecialization(Integer id) {
-		Optional<Specialization> opt = repo.findById(id);
-		if(opt.isPresent()) {
-			opt.get();
-		}else {
-			throw new RuntimeException("Not Found");
-		}
-		return null;
+		/*
+		 * Optional<Specialization> opt = repo.findById(id); if(opt.isPresent()) {
+		 * opt.get(); }else { throw new SpecializationException("Not Found"); } return
+		 * null;
+		 */
+		return repo.findById(id).orElseThrow(()->new SpecializationException("Not Found"));
 	}
 
 	public List<Specialization> getAllSpecializations() {
@@ -41,7 +41,9 @@ public class SpecializationServiceImpl implements SpecializationService {
 	}
 
 	public void updateSpecialization(Specialization specialization) {
-		repo.save(specialization);
+		if(getOneSpecialization(specialization.getId())!=null && repo.existsById(specialization.getId())) {			
+			repo.save(specialization);
+		}
 	}
 
 }

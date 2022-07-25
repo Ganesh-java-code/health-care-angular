@@ -1,6 +1,6 @@
 package in.nit.ganesh.exception;
 
-public class SpecializationException extends Exception {
+public class SpecializationException extends RuntimeException {
 
 	/**
 	 * 
