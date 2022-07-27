@@ -48,6 +48,7 @@ public class SpecializationController {
 
 	}
 
+	//fetch one record using getmapping http method call
 	@GetMapping("/one/{id}")
 	public ResponseEntity<?> getOneSpec(@PathVariable Integer id){
 		ResponseEntity<?> resp = null;
