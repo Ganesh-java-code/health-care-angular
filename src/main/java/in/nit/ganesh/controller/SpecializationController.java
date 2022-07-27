@@ -33,6 +33,7 @@ public class SpecializationController {
 		//creating response entity object
 		ResponseEntity<String> resp = null;
 		Integer id = service.saveSpecialization(specialization);
+		//MESSAGE
 		String msg = "Spec'" + id + "'created..";
 		resp = new ResponseEntity<String>(msg, HttpStatus.CREATED);
 		return resp;
