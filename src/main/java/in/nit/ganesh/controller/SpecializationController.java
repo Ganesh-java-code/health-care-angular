@@ -36,6 +36,7 @@ public class SpecializationController {
 		return resp;
 	}
 
+	//fetch all record using getmapping http method call
 	@GetMapping("/all")
 	public ResponseEntity<?> getAllSpecialization() {
 		ResponseEntity<?> resp = null;
