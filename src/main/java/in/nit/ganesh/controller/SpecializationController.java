@@ -62,6 +62,7 @@ public class SpecializationController {
 		return resp;
 	}
 	
+	//Delete Records Rest call using http method call
 	@DeleteMapping("/remove/{id}")
 	public ResponseEntity<String> deleteSpec(@PathVariable Integer id){
 		ResponseEntity<String> resp = null;
