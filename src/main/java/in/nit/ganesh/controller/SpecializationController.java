@@ -27,6 +27,7 @@ public class SpecializationController {
 	@Autowired
 	private SpecializationService service;
 
+	//create/save record using postmapping http method call
 	@PostMapping("/create")
 	public ResponseEntity<String> saveSpecialization(@RequestBody Specialization specialization) {
 		ResponseEntity<String> resp = null;
