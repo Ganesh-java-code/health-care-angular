@@ -77,6 +77,7 @@ public class SpecializationController {
 		return resp;
 	}
 	
+	//update function call using http method call putmapping
 	@PutMapping("/modify")
 	public ResponseEntity<String> updateSpec(@RequestBody Specialization specialization){
 		ResponseEntity<String> resp = null;
