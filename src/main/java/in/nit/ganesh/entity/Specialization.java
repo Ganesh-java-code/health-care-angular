@@ -31,7 +31,7 @@ public class Specialization {
 			length = 10,
 			unique = true
 			)
-	private String SpecCode;
+	private String specCode;
 	
 	@Column(
 			name = "spec_name_col",
@@ -39,13 +39,13 @@ public class Specialization {
 			nullable = false,
 			unique = true
 			)
-	private String SpecName;
+	private String specName;
 	
 	@Column(
 			name = "spec_note_col",
 			nullable = false,
 			length = 350			
 			)
-	private String SpecNote;
+	private String specNote;
 
 }
